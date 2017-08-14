@@ -15,6 +15,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\o_solid</object>
+    <object>objects\Player</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
