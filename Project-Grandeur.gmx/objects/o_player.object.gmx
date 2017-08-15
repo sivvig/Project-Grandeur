@@ -35,7 +35,7 @@ max_Mp = 999;
 jumpSpeed = 10;
 
 //gravity and current speeds
-grav = 0.2;
+grav = 2;
 hspd = 0;
 vspd = 0;
 
@@ -67,17 +67,14 @@ collision_object = o_solid;
             <kind>1</kind>
             <string>//Movement Setup
 
-key_right = vk_right;
-key_left = vk_left;
-key_jump = vk_space;
+key_right = keyboard_check(vk_right);
+key_left = keyboard_check(vk_left);
+key_jump = keyboard_check(vk_space);
 
 hspd = (key_right - key_left)*moveSpeed;
 if(vspd&lt;10) vspd += grav;
 
-if(place_meeting(x,y+1, collision_object))
-{
-    vspd = key_jump * -jumpSpeed;
-}
+//Collision
 enable_collisions(o_solid);
 </string>
           </argument>

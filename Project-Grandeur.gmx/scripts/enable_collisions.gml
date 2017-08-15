@@ -11,6 +11,11 @@ if (place_meeting(x+hspd, y, collision_object)) {
 x += hspd;
 
 // Vertical Collisions
+if(place_meeting(x,y+1, collision_object))
+{
+    vspd = key_jump * -jumpSpeed;
+}
+
 if (place_meeting(x, y+vspd, collision_object)) {
     while (!place_meeting(x, y+sign(vspd), collision_object)) {
         y += sign(vspd);
