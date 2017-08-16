@@ -28,10 +28,10 @@
             <string>
 //Player Stats
 moveSpeed = 5;
-base_Hp = 500;
-max_Hp = 9999;
-base_Mp = 200;
-max_Mp = 999;
+cur_Hp = 500;
+max_Hp = 500;
+cur_Mp = 200;
+max_Mp = 200;
 jumpSpeed = 10;
 
 //gravity and current speeds
@@ -76,6 +76,33 @@ if(vspd&lt;10) vspd += grav;
 
 //Collision
 enable_collisions(o_solid);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//hbor 240
+draw_text(view_xview[0],view_yview[0]+4,"Hp");
+draw_text(view_xview[0],view_yview[0]+15,"Mp");
+draw_healthbar(view_xview[0]+20,view_yview[0]+5,view_xview[0]+100,view_yview[0]+15,(cur_Hp/max_Hp)*100,c_black,c_red,c_green,0,true,true);
+draw_healthbar(view_xview[0]+20,view_yview[0]+15,view_xview[0]+100,view_yview[0]+25,(cur_Hp/max_Hp)*100,c_black,c_yellow,c_blue,0,true,true);
 </string>
           </argument>
         </arguments>
